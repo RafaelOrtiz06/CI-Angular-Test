@@ -1,4 +1,4 @@
-name: E-Porra Frontend
+name: Automatically Merge
 
 on:
   push:
@@ -14,3 +14,4 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       source-branch: develop
       target-branch: release
+  
