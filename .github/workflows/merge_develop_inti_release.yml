@@ -1,26 +1,21 @@
-name: Sync multiple branches
+name: Automatically Merge
+
 on:
   push:
-    branches:
-      - '*'
+    branches: [ develop ]
+
 jobs:
-  sync-branch:
+  merge:
     runs-on: ubuntu-latest
-    steps:
+    if: ${{ contains(github.event.head_commit.message, 'toRelease') }}
+
+    steps: 
       - uses: actions/checkout@master
 
-      - name: Merge development -> staging
+      - name: Merge develop -> release
         uses: devmasx/merge-branch@master
         with:
           type: now
-          from_branch: development
-          target_branch: staging
-          github_token: ${{ github.token }}
-
-      - name: Merge staging -> uat
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          from_branch: staging
-          target_branch: uat
+          from_branch: develop
+          target_branch: release
           github_token: ${{ github.token }}
