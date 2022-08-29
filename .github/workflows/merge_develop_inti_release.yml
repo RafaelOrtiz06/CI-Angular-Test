@@ -6,13 +6,14 @@ on:
 
 jobs:
   merge:
+    name: Merge
     runs-on: ubuntu-latest
+    if: ${{ contains(github.event.head_commit.message, 'toRelease') }}
     steps:
-      - name: Merge Develop Into Release
-      - uses: tukasz/direct-merge-action@master 
-      if: ${{ contains(github.event.head_commit.message, 'toRelease') }}
+    - name: Merge Develop Into Release
+    - uses: tukasz/direct-merge-action@master 
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         source-branch: develop
         target-branch: release
-  
+        
