@@ -30,13 +30,7 @@ jobs:
           key: modules-${{ hashFiles('package-lock.json') }}
 
       - name: Install
-        run: npm install
+        run: npm ci
 
       - name: Build
-        run: npm run build
-
-      - name: Test
-        run: npm run test
-        env: 
-          CHROME_BIN: $(which chrome)
-        
+        run: npm run build:ci
