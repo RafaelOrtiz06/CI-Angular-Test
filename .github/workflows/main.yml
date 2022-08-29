@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-     
-
       - name: Install Chrome
         uses: browser-actions/setup-chrome@latest
 
@@ -20,11 +18,7 @@ jobs:
         with:
           node-version: 12.x
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: modules-${{ hashFiles('package.json') }}
+      
 
       - name: Install
         run: npm install
