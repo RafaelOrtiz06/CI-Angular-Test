@@ -1,0 +1,18 @@
+name: Automatically Merge
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    name: Merge Develop Into Release
+    if: ${{ contains(github.event.head_commit.message, 'toRelease') }}
+    uses: tukasz/direct-merge-action@master 
+    with:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      source-branch: develop
+      target-branch: release
+  
+  
