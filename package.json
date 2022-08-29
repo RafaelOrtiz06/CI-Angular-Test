@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build",
-    "test": "ng test --watch=false --browsers=ChromeHeadlessCustom",
+    "test": "ng test --watch=false --browsers=ChromeHeadless",
     "test:watch": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
