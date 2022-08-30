@@ -1,11 +1,13 @@
 /* tslint:disable:no-unused-variable */
-
 import { inject, TestBed } from '@angular/core/testing';
 import { UsuarioService } from './usuario.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 
 describe('Service: Usuario', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       providers: [UsuarioService]
     });
   });
