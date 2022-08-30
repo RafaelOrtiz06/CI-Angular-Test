@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build",
-    "test": "ng test --watch=false --browsers=ChromeHeadless",
-    "test:watch": "ng test",
+    "test": "ng test --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
