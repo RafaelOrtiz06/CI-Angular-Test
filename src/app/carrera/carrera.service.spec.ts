@@ -2,10 +2,12 @@
 
 import { inject, TestBed } from '@angular/core/testing';
 import { CarreraService } from './carrera.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('Service: Carrera', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       providers: [CarreraService]
     });
   });
